@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
 <html>
-   <head>
-      <title>ReceitaReact - Classes</title>      
-   </head>
-   <body>
-      <div id="app">
-      </div>
-      <script src="libs/react.js"></script>
-      <script src="libs/react-dom.js"></script>
-      <script src="libs/babel.js"></script>
-      <script type="text/babel">
+<head>
+    <title>ReceitaReact - Classes</title>      
+</head>
+<body>
+    <div id="app">
+    </div>
+        <script src="libs/react.js"></script>
+        <script src="libs/react-dom.js"></script>
+        <script src="libs/babel.js"></script>
+        <script type="text/babel">
         const Cabecalho = () => {
             return (
                 <div>
@@ -21,7 +21,6 @@
         const TabelaBebidas = () => {
             return (
                 <div>
-                    <h1>Minha Tabela de Bebidas</h1>
                     <table id="tabela" border="1">
                         <thead>
                             <tr><th>Nome</th><th>Marca</th></tr>
@@ -34,11 +33,13 @@
             )
         }
         ReactDOM.render(
-            (<Cabecalho/>
+            <div>
+            <Cabecalho/>
             ,
-            <TabelaBebidas/>)
+            <TabelaBebidas/>
+            </div>
             ,
             document.getElementById("app"))
-      </script>
-   </body>
+    </script>
+</body>
 </html>
