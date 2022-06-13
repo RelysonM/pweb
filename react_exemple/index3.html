@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ReceitaReact - 3</title>  
+    <style>
+        table{border-collapse: collapse; width:75;} 
+        td{background-color: rgb(9, 138, 106);}
+        tr{background-color: rgb(3, 59, 45);}
+        table, th, td{border: solid 2px black}
+    </style>    
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+    <script src="libs/babel.js"></script>
+    <script type="text/babel">
+        const TabelaBebidas = ({titulo,cabecalhos:[cabecalho1,cabecalho2]}) => {
+            return (
+            <div>
+                <h1>{titulo}</h1>
+                <table id="tabela" border="1">
+                    <thead>
+                        <tr><th>{cabecalho1}</th><th>{cabecalho2}</th></tr>
+                    </thead>
+                    <tbody>
+                        {
+                            valoresCelulas.map((value, key) => {
+                            return (
+                                <tr key={key}>
+                                    <td>{value.nome}</td>
+                                    <td>{value.marca}</td>
+                                </tr>
+                            )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+                    )  
+            }
+            const valoresCabecalhos = ["Nome", "Marca"]
+            const valoresCelulas = [{ nome: "Chimay Grande Réserve", marca: "Leffe"},
+                                    { nome: "Sierra Nevada Bigfoot Barleywine Style Ale", marca: "Pacifico"},
+                                    { nome: "Hop Rod Rye", marca: "Murphys"}]
+            ReactDOM.render(
+            <TabelaBebidas titulo="minha tabela de cana" cabecalhos={valoresCabecalhos}/>
+         ,
+        document.getElementById("app"))
+    </script>
+</body>
+</html>
